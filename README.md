@@ -120,7 +120,7 @@
 ## 📊 Key Visualizations
 
 ### Survival Rate by Sex
-<img src="Image/newput.png" width="500">
+<img src="Image/newplot.png" width="500">
 
 ### Survival Rate by Class and Sex
 <img src="Image/class x sex x survival(plotly).png" width="500">
