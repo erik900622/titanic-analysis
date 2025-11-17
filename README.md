@@ -117,13 +117,88 @@
 - 如何從預測結果抽出對業務有用的分群與建議
 
 
-## 📊 Key Visualizations
+## 📊 Key Visualizations & Insights
 
-### Survival Rate by Sex
-<img src="Image/newplot.png" width="500">
+以下為我在分析 Titanic 資料時產生的主要視覺化結果，並搭配每張圖的分析洞察。
 
-### Survival Rate by Class and Sex
-<img src="Image/class x sex x survival(plotly).png" width="500">
+---
 
-### Feature Importance from Random Forest
-<img src="Image/特徵工程.png" width="500">
+### 1. Age, Fare, Pclass Scatter Plot  
+<img src="images/age_fare_pclass.png" width="550">
+
+此散佈圖一致顯示：  
+- **高票價（Fare）與年齡（Age）有群聚現象，對應高艙等 Pclass=1 的乘客。**  
+- 高艙等族群比較集中於高票價區域，顯示價值較高的客戶具有更高支付能力。  
+- 商業解釋：*高價值客群通常具有更高存活率（成功率），模型能透過 Fare 與 Pclass 共同判斷客戶價值。*
+
+---
+
+### 2. Survival Rate by Class and Sex（Plotly）
+<img src="images/class_sex_survival.png" width="550">
+
+此圖顯示性別與艙等交互作用：  
+- 女性在所有艙等的生存率都高，但 **1 等艙女性幾乎全數存活**。  
+- 男性不論艙等，生存率皆顯著較低。  
+- 商業解釋：*模型可以透過 Sex + Pclass 做有效 segmentation，捕捉客層差異。*
+
+---
+
+### 3. Survival Rate by Family Size  
+<img src="images/familySize_survived.png" width="550">
+
+觀察結果：  
+- **2–4 人的小家庭生存率最高**。  
+- 家庭太大（5 以上）或為單人（FamilySize=1）生存率下降。  
+- 商業解釋：*FamilySize 反映社交/家庭行為，在真實應用中，可類比「團體用戶」與「單人用戶」行為差異。*
+
+---
+
+### 4. Survival Rate by Age & Sex  
+<img src="images/age_sex.png" width="550">
+
+觀察結果：  
+- 女性不論年齡分布都明顯高於男性。  
+- 男性年齡越大，存活率越低。  
+- 商業解釋：*年齡可視為客戶生命週期階段（早期、中期、晚期用戶），會影響行為模式。*
+
+---
+
+### 5. Age Distribution Histogram  
+<img src="images/age_distribution.png" width="550">
+
+觀察結果：  
+- 年齡右偏分布，20–40 歲為主力乘客族群。  
+- 兒童（Age < 12）較少，但 EDA 及模型顯示存活率偏高。  
+- 商業解釋：*可用於分群，例如青年客群、中年客群、家庭客群。*
+
+---
+
+### 6. Survival Rate by Class and Sex（Seaborn）
+<img src="images/survival_class_sex.png" width="550">
+
+與 plotly 圖結果一致：  
+- **艙等差異**（Pclass）和 **性別差異**（Sex）是決定存活率最強烈的兩個因素。  
+- 商業解釋：*族群 segmentation 清晰明確，適合作為模型主要特徵。*
+
+---
+
+### 7. Survival Rate by Family Size（Seaborn）
+<img src="images/survival_familysize.png" width="550">
+
+與 `familySize_survived.png` 結果一致：  
+- 小家庭存活率比大家庭及單獨旅客更高。  
+- 商業解釋：*FamilySize 是一個 proxy feature，可解釋客戶是否「一起決策」或「單獨決策」。*
+
+---
+
+### 8. Logistic Regression Coefficients（Feature Importance）
+<img src="images/feature.png" width="450">
+
+係數說明：  
+- **Sex** 係數最大（正向），女性更可能生存  
+- **Pclass** 係數負向且大，艙等越高越安全  
+- **Fare** 係數正向 → 顯示「付較高價格的客戶」存活率更高  
+- **Age** 係數負向 → 年齡越大存活率越低  
+- 商業解釋：*模型的解釋性高，可以清楚指出「哪些因素最影響客戶成功」。*
+
+---
