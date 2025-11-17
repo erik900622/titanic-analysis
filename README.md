@@ -59,15 +59,14 @@
 ```mermaid
 flowchart TD
 
-A[模型判斷：是否需要救援？] --> B1[預測：需要救援]
-A --> B2[預測：不需要救援]
+    A["模型判斷：是否需要救援？"] --> B1["預測：需要救援"]
+    A --> B2["預測：不需要救援"]
 
-B1 --> C1[實際：高風險 → True Positive<br>成功救援 → 正確]
-B1 --> C2[實際：低風險 → False Positive (Type I Error)<br>誤救 → 浪費救生艇，但無人喪命]
+    B1 --> C1["實際：高風險 → True Positive（救到該救的人）"]
+    B1 --> C2["實際：低風險 → Type I Error（誤救，浪費救生艇）"]
 
-B2 --> C3[實際：低風險 → True Negative<br>資源保留 → 正確]
-B2 --> C4[實際：高風險 → False Negative (Type II Error)<br>誤放棄 → 可能死亡（成本最高）]
----
+    B2 --> C3["實際：低風險 → True Negative（正確放行）"]
+    B2 --> C4["實際：高風險 → Type II Error（誤放棄，可能死亡）"]
 
 # 📌 問題定義
 
