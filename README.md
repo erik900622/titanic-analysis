@@ -114,4 +114,16 @@
 - 如何根據欄位意義設計特徵  
 - 如何用圖表與指標說明「為什麼」  
 - 如何用簡單、可解釋的模型支援決策  
-- 如何從預測結果抽出對業務有用的分群與建議  
+- 如何從預測結果抽出對業務有用的分群與建議
+
+
+## 📊 Key Visualizations
+
+### Survival Rate by Sex
+<img src="images/output.png" width="500">
+
+### Survival Rate by Class and Sex
+<img src="images/class x sex x survival(plotly).png" width="500">
+
+### Feature Importance from Random Forest
+<img src="images/特徵工程.png" width="500">
