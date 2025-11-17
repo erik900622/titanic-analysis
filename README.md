@@ -24,6 +24,7 @@ Titanic 資料反映的是「最終誰比較容易存活」，
 
 ## ⚠️ Error Trade-off（風險識別）
 
+```mermaid
 flowchart TD
 
     A["模型判斷：是否為高風險（弱勢）？"] --> B1["預測：高風險"]
@@ -34,8 +35,7 @@ flowchart TD
 
     B2 --> C3["實際：低風險 → True Negative（成功排除）"]
     B2 --> C4["實際：高風險 → Type II Error（弱勢被忽略）"]
-
-
+```
 
 綜合 EDA 與模型結果，可以用一句話描述決策規則：
 
