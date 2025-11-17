@@ -120,10 +120,10 @@
 ## 📊 Key Visualizations
 
 ### Survival Rate by Sex
-<img src="images/output.png" width="500">
+<img src="image/newput.png" width="500">
 
 ### Survival Rate by Class and Sex
-<img src="images/class x sex x survival(plotly).png" width="500">
+<img src="image/class x sex x survival(plotly).png" width="500">
 
 ### Feature Importance from Random Forest
-<img src="images/特徵工程.png" width="500">
+<img src="image/特徵工程.png" width="500">
