@@ -20,7 +20,7 @@
 
 - `Data/`：放原始資料（train.csv, test.csv, submission.csv）
 - `image/`：放視覺化圖片（生存率圖、特徵重要性等）
-- `noteboooks/`：Jupyter Notebook（EDA、清洗、建模）
+- `notebooks/`：Jupyter Notebook（EDA、清洗、建模）
 - `README.md`：本說明文件
 
 之後會逐步整理成：
